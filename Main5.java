@@ -9,15 +9,15 @@ public class Main5 {
     String dat = in.nextLine();
     SimpleDateFormat date = new SimpleDateFormat ("dd.MM.yyyy");
     Date data = date.parse(dat); 
-    System.out.println(data);
-    data.setTime(data.getTime() + 3888000000L);
-    System.out.println("Дата после увелечения на 45 дней:"+data);
+    Calendar calendar = Calendar.getInstance();
+    calendar.setTime(data);
+    calendar.add(Calendar.DAY_OF_MONTH, 45);
+    System.out.println("Дата, увеличенная на 45 дней: " + date.format(calendar.getTime()));
     SimpleDateFormat date1 = new SimpleDateFormat ("dd.MM.yyyy");
-    data.setMonth(0);
-        data.setDate(1);
-        System.out.println("Дата после сдвига на начало года:" + data);
+    calendar.set(Calendar.MONTH, Calendar.JANUARY);
+    calendar.set(Calendar.DAY_OF_MONTH, 1);
+    System.out.println("Начало года: " + date.format(calendar.getTime()));
         Date data0 = date.parse(dat);
-        Calendar calendar = Calendar.getInstance();
         calendar.setTime(data0);
         int workDays = 0;
         while (workDays < 10) {
