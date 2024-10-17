@@ -14,10 +14,10 @@ public class Main6 {
     int UserAge2 = in.nextInt();
     User human2 = new User(UserName2, UserAge2);
     if (UserAge>UserAge2) {
-        System.out.println(human.toString());
+        System.out.println(human2.toString());
     }
     else if (UserAge2>UserAge) {
-        System.out.println(human2.toString());
+        System.out.println(human.toString());
     }
         
     }

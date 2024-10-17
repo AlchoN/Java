@@ -1,12 +1,12 @@
-import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.HashMap;
 import java.util.List;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
-public class Main7 {
+import java.util.ArrayList;
+import java.util.Map;
+public class Main8 {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+        Scanner in = new Scanner (System.in);
+        Map<Integer, List<User> > MapaMap = new HashMap<>();
         ArrayList<User> myArrayList = new ArrayList<User>();
         String UserName = null;
         int UserAge = 0;
@@ -15,23 +15,15 @@ public class Main7 {
             UserName = in.nextLine();
             System.out.println("Введите возраст пользователя " + i + ":");
             UserAge = in.nextInt();
+            
             User human = new User(UserName, UserAge);
             myArrayList.add(human);
             in.nextLine();
             
         }
-         Collections.sort(myArrayList, new Comparator<User>() {
-            public int compare (User human1, User human2) {
-                return human1.getAge()-(human2.getAge());
-            }
-         });
-         for (User human : myArrayList) {
-            System.out.println(human.toString());
-         }
-    
-        
-        
-        
+        for (int YearsOld : myArrayList) {
+            MapaMap.put(YearsOld, MapaMap.getOrDefault(UserAge, myArrayList) );
+        }
     }
 }
 

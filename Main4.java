@@ -15,7 +15,7 @@ public class Main4 {
         System.out.printf("Подстрока %s встречается %d раз %n", str2, col);
         System.out.print("Введите строку:");
         String str3 = in.nextLine();
-        String replStr1 = str3.replaceAll( "кака | бяка"," Вырезано цензурой ");
+        String replStr1 = str3.replaceAll( "\\bкака\\b|\\bбяка\\b"," Вырезано цензурой ");
         System.out.println (replStr1);
         System.out.print("Введите дату в формате 'дд.мм.гггг':");
         String str = in.nextLine();
